@@ -59,14 +59,14 @@ function state:update(dt)
 end
 
 function state:draw()
-	-- local camera = self.camera
-	-- local player = self.player
-	-- camera:lookAt((player.pos + player.anchor - self.camera_offset):unpack())
-	-- camera:attach()
+	local camera = self.camera
+	local player = self.player
+	camera:lookAt((player.pos + player.anchor):unpack())
+	camera:attach()
 	for i,v in ipairs(self.pool) do
 		v:draw()
 	end
-	-- camera:detach()
+	camera:detach()
 	-- draw hud
 end
 
